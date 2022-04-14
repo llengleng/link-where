@@ -1,44 +1,50 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      身体和灵魂必须有一个在路上
-    </p>
-    <h3>前端</h3>
-    <ul>
-      <li><a href="https://v3.cn.vuejs.org/" target="_blank" rel="noopener">Vue</a></li>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank" rel="noopener">MDN 文档</a></li>
-    </ul>
-    <h3>后端</h3>
-    <ul>
-      <li><a href="https://pdai.tech/" target="_blank" rel="noopener">Java 文档</a></li>
-    </ul>
+  <div class="root-box">  
+    <div class="hello">
+      <el-card class="box-card" v-for="o in 11" :key="o">
+        <div class="card">
+          <div class="card-img">
+            <img class="img" src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png">
+          </div>
+          <div class="text">
+            <div class="title">Vue 官网</div>
+            <div>简介：</div>
+          </div>
+        </div>
+      </el-card>
+
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.hello {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.box-card {
+  width: 330px;
+  margin: 20px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.card {
+  display: flex;
 }
-a {
-  color: #42b983;
+.text {
+  margin-left: 30px;
+}
+.title {
+  margin-bottom: 20px;
+}
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 </style>
